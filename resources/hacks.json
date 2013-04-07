@@ -1,0 +1,47 @@
+[
+    {
+        "city": "Berlin",
+        "hacks":
+            [
+                {"name":"Berlin Startup Weekend", "date":"2013-05-20", "where":"berlin", "info":"This is one of the coolest hacks in town bitches"} ,
+                {"name":"Berlin Hackathon", "date":"2013-05-21", "where":"berlin", "info":"This is one of the coolest hacks in town bitches"},
+                {"name":"Berlin Angel Hack", "date":"2013-06-20", "where":"berlin", "info":"This is one of the coolest hacks in town bitches"},
+                {"name":"Berlin Hackathon", "date":"2013-07-20", "where":"berlin", "info":"This is one of the coolest hacks in town bitches"}
+            ]
+
+    },
+
+    {
+        "city": "London",
+        "hacks":
+            [
+                {"name":"London Startup Weekend", "date":"2013-05-20", "where":"london", "info":"This is one of the coolest hacks in town bitches"} ,
+                {"name":"London Angel Hack", "date":"2013-06-20", "where":"london", "info":"This is one of the coolest hacks in town bitches"},
+                {"name":"London Hackathon", "date":"2013-07-20", "where":"london", "info":"This is one of the coolest hacks in town bitches"}
+            ]
+
+    }
+
+    ,
+
+    {
+        "city": "San Francisco",
+        "hacks":
+            [
+                {"name":"SF Startup Weekend", "date":"2013-05-20", "where":"san francisco", "info":"This is one of the coolest hacks in town bitches"} ,
+                {"name":"SF Angel Hack", "date":"2013-06-20", "where":"san francisco", "info":"This is one of the coolest hacks in town bitches"},
+                {"name":"SF Hackathon", "date":"2013-07-20", "where":"san francisco", "info":"This is one of the coolest hacks in town bitches"}
+            ]
+    },
+
+    {
+        "city": "Bangalore",
+        "hacks":
+            [
+                {"name":"BNG MAY Startup Weekend", "date":"2013-05-20", "where":"Bangalore"} ,
+                {"name":"BNG OCT Angel Hack", "date":"2013-10-20", "where":"Bangalore"},
+                {"name":"BNG DEC Hackathon", "date":"2013-12-20", "where":"Bangalore"}
+            ]
+    }
+
+]
