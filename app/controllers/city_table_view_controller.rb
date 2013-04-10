@@ -18,7 +18,7 @@ class CityTableViewController < UITableViewController
 
   def viewDidUnload
     super
-
+    @hack_list.destroy
   end
 
   def shouldAutorotateToInterfaceOrientation(interfaceOrientation)

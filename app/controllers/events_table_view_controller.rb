@@ -1,7 +1,7 @@
 class EventsTableViewController < UITableViewController
   def viewDidLoad
     super
-    self.navigationItem.rightBarButtonItem= self.editButtonItem
+   # self.navigationItem.rightBarButtonItem= self.editButtonItem
     @display_data = Hash.new
   end
 
@@ -45,6 +45,7 @@ class EventsTableViewController < UITableViewController
   def tableView(tableView, numberOfRowsInSection:section)
     key = @month.keys[section]
     nr = @month[key].length
+    puts @month
     nr+=1  if tableView.isEditing
     nr
   end
@@ -96,10 +97,10 @@ class EventsTableViewController < UITableViewController
   def setEditing(isEditing, animated:animated)
     super(isEditing, animated:animated)
 
-    last_index_path = [NSIndexPath.indexPathForRow(@hack_data[:hacks].length, inSection:1)]
+    last_index_path = [NSIndexPath.indexPathForRow(@hack_data[:hacks].length, inSection:0)]
 
     if isEditing
-      puts last_index_path
+
       tableView.insertRowsAtIndexPaths(last_index_path, withRowAnimation:UITableViewRowAnimationBottom)
     else
       tableView.deleteRowsAtIndexPaths(last_index_path, withRowAnimation:UITableViewRowAnimationBottom)
@@ -118,9 +119,6 @@ class EventsTableViewController < UITableViewController
     event_info = @hack_data["hacks"][indexPath.row]
     selected_event.loadData(event_info)
     self.navigationController.pushViewController(selected_event, animated:true)
-
-
-
 
   end
 
