@@ -18,7 +18,7 @@ class CityTableViewController < UITableViewController
 
   def viewDidUnload
     super
-    @hack_list.destroy
+
   end
 
   def shouldAutorotateToInterfaceOrientation(interfaceOrientation)
@@ -37,9 +37,6 @@ class CityTableViewController < UITableViewController
   #end
 
   def tableView(tableView, numberOfRowsInSection:section)
-
-
-
     @hack_list.length
   end
 
@@ -62,8 +59,8 @@ class CityTableViewController < UITableViewController
 
   def tableView(tableView, didSelectRowAtIndexPath:indexPath)
     events_controller = EventsTableViewController.alloc.init
-    self.navigationController.pushViewController(events_controller, animated:true)
     city_set = @hack_list[indexPath.row]
     events_controller.bind_with_events(city_set)
+    self.navigationController.pushViewController(events_controller, animated:true)
   end
 end

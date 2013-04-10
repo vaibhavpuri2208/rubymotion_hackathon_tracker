@@ -23,35 +23,7 @@ class EventViewController < UIViewController
     @event_info = event_info
 
   end
-=begin
 
-  def requestUserCurrentLocation
-
-    if (CLLocationManager.locationServicesEnabled)
-      @location_manager = CLLocationManager.alloc.init
-
-      @location_manager.desiredAccuracy= KCLLocationAccuracyKilometer
-
-      @location_manager.delegate= self
-
-      @location_manager.purpose = "Locate Hackathons for uoi"
-      @location_manager.startUpdatingLocation
-    else
-      showAlertWithTitle('Location Error', 'Please Enable the Location Services for this app in the Settings section')
-
-    end
-
-  end
-
-  def locationManager(manager, didUpdateToLocation:newLocation, fromLocation:oldLocation)
-
-
-  end
-
-  def locationManager(manager, didFailWithError:error)
-    showAlertWithTitle("Error", andMessage:error.description)
-  end
-=end
 
   def mapViewForEvent
     map_view_for_event = MKMapView.alloc.initWithFrame([[25,50], [270, 180]])

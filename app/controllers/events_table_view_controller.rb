@@ -1,8 +1,7 @@
 class EventsTableViewController < UITableViewController
   def viewDidLoad
     super
-   # self.navigationItem.rightBarButtonItem= self.editButtonItem
-    @display_data = Hash.new
+    self
   end
 
   def viewDidUnload
@@ -38,16 +37,14 @@ class EventsTableViewController < UITableViewController
 ## Table view data source
 
   def numberOfSectionsInTableView(tableView)
-  #@month.size
-    3
+    section_size = @hack_data["hacks"].length
+    section_size
   end
 
   def tableView(tableView, numberOfRowsInSection:section)
     key = @month.keys[section]
     nr = @month[key].length
-    puts @month
-    nr+=1  if tableView.isEditing
-    nr
+
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
@@ -60,7 +57,6 @@ class EventsTableViewController < UITableViewController
 
     key = @month.keys[indexPath.section]
     hack_event = @month[key][indexPath.row]
-
     cell.textLabel.text = hack_event
     cell
   end
