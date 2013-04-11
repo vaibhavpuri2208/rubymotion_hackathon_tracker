@@ -58,11 +58,17 @@ class EventViewController < UIViewController
 
   def regionForEventLocation
     completion_block =  lambda do |placemark, error|
-      latitude = placemark[0].location.coordinate.latitude
-      longitude= placemark[0].location.coordinate.longitude
-      coordinates = CLLocationCoordinate2DMake(latitude,longitude)
-      region = MKCoordinateRegionMake(coordinates, MKCoordinateSpanMake(0.7, 0.7))
-      @map_view_for_event.setRegion region
+      if !error
+        latitude = placemark[0].location.coordinate.latitude
+        longitude= placemark[0].location.coordinate.longitude
+        coordinates = CLLocationCoordinate2DMake(latitude,longitude)
+        #region = MKCoordinateRegionMake(coordinates, MKCoordinateSpanMake(0.1, 0.1))
+        distance = NSNumber.numberWithDouble(500)
+        region = MKCoordinateRegionMakeWithDistance(coordinates, distance, distance)
+        @map_view_for_event.setRegion region
+        annotation = annotationForEvent(coordinates, @event_info[:info], @event_info[:where])
+        @map_view_for_event.addAnnotation(annotation)
+      end
 
     end
 
@@ -70,6 +76,9 @@ class EventViewController < UIViewController
 
     end
 
+        def annotationForEvent(coordinate, title, address)
+          EventAnnotation.alloc.initWithCoordinate(coordinate,title:title,andSubTitle:address)
 
+        end
 
 end

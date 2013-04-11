@@ -6,7 +6,6 @@ class CityTableViewController < UITableViewController
 
         BubbleWrap::HTTP.get("http://localhost:3000/hackathons.json") do |response|
           @hack_list = BubbleWrap::JSON.parse response.body.to_str
-          puts @hack_list
           self.view.reloadData
 
         end
