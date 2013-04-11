@@ -21,10 +21,10 @@ class EventsTableViewController < UITableViewController
     @month = Hash.new
     @hack_data[:hacks].each do |line_item|
      active_month=return_month line_item[:date]
-     if !@month.has_key?(active_month)
+       if !@month.has_key?(active_month)
        @month[active_month] = Array.new
      end
-     @month[active_month] << line_item[:name]
+     @month[active_month] << line_item[:info]
     end
     @month
   end
@@ -43,8 +43,9 @@ class EventsTableViewController < UITableViewController
 
   def tableView(tableView, numberOfRowsInSection:section)
     key = @month.keys[section]
-    nr = @month[key].length
-
+    #nr = @month[key].length
+    puts @month[key]
+    1
   end
 
   def tableView(tableView, cellForRowAtIndexPath:indexPath)
@@ -125,26 +126,27 @@ class EventsTableViewController < UITableViewController
   end
 
   def return_month(date)
-    month = date.slice(5,2)
+    #month = date.slice(5,2)
 
+    month = "1"#date.month.to_s
     month = case month
-      when "01"
+      when "1"
         "Jan"
-      when "02"
+      when "2"
         "Feb"
-      when "03"
+      when "3"
         "March"
-      when "04"
+      when "4"
         "April"
-      when "05"
+      when "5"
         "May"
-      when "06"
+      when "6"
         "June"
-      when "07"
+      when "7"
         "July"
-      when "08"
+      when "8"
         "Aug"
-      when "09"
+      when "9"
         "Sept"
       when "10"
         "Oct"

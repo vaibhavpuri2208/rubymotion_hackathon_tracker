@@ -2,17 +2,28 @@ class CityTableViewController < UITableViewController
   def viewDidLoad
     super
 
-    Dispatch::Queue.concurrent(:high).async {
-      hack_list = File.read("#{App.resources_path}/hacks.json")
-      @hack_list = BW::JSON.parse(hack_list).map do |list|
-        l = list.dup
-        l[:hacks] = l[:hacks].dup
-        l
-      end
+    #Dispatch::Queue.concurrent(:high).async {
 
-      self.view.reloadData
-    }
+        BubbleWrap::HTTP.get("http://localhost:3000/hackathons.json") do |response|
+          @hack_list = BubbleWrap::JSON.parse response.body.to_str
+          puts @hack_list
+          self.view.reloadData
 
+        end
+
+
+=begin
+
+        hack_list = File.read("#{App.resources_path}/hacks.json")
+        @hack_list = BW::JSON.parse(hack_list).map do |list|
+          l = list.dup
+          l[:hacks] = l[:hacks].dup
+          l
+        end
+=end
+
+#    self.view.reloadData
+    #}
     navigationItem.title= 'City'
   end
 

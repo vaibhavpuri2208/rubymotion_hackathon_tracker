@@ -1,0 +1,264 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<opaque type='^{JKParseState=}' name='JKParseState'/>
+<enum value='1' name='JKParseOptionComments'/>
+<enum value='4' name='JKParseOptionLooseUnicode'/>
+<enum value='0' name='JKParseOptionNone'/>
+<enum value='8' name='JKParseOptionPermitTextAfterValidJSON'/>
+<enum value='0' name='JKParseOptionStrict'/>
+<enum value='2' name='JKParseOptionUnicodeNewlines'/>
+<enum value='15' name='JKParseOptionValidFlags'/>
+<enum value='16' name='JKSerializeOptionEscapeForwardSlashes'/>
+<enum value='2' name='JKSerializeOptionEscapeUnicode'/>
+<enum value='0' name='JKSerializeOptionNone'/>
+<enum value='1' name='JKSerializeOptionPretty'/>
+<enum value='19' name='JKSerializeOptionValidFlags'/>
+<enum value='1' name='JSONKIT_VERSION_MAJOR'/>
+<enum value='4' name='JSONKIT_VERSION_MINOR'/>
+<class name='JSONDecoder'>
+<method selector='clearCache'>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='decoder'>
+<retval type='@' declared_type='id'/>
+</method>
+<method class_method='true' selector='decoderWithParseOptions:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='initWithParseOptions:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectWithData:'>
+<arg type='@' index='0' name='jsonData' declared_type='NSData*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectWithData:error:'>
+<arg type='@' index='0' name='jsonData' declared_type='NSData*'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectWithUTF8String:length:'>
+<arg const='true' type='*' index='0' name='string' declared_type='unsigned char*'/>
+<arg type='I' index='1' name='length' declared_type='NSUInteger'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectWithUTF8String:length:error:'>
+<arg const='true' type='*' index='0' name='string' declared_type='unsigned char*'/>
+<arg type='I' index='1' name='length' declared_type='NSUInteger'/>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectWithData:'>
+<arg type='@' index='0' name='jsonData' declared_type='NSData*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectWithData:error:'>
+<arg type='@' index='0' name='jsonData' declared_type='NSData*'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectWithUTF8String:length:'>
+<arg const='true' type='*' index='0' name='string' declared_type='unsigned char*'/>
+<arg type='I' index='1' name='length' declared_type='NSUInteger'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectWithUTF8String:length:error:'>
+<arg const='true' type='*' index='0' name='string' declared_type='unsigned char*'/>
+<arg type='I' index='1' name='length' declared_type='NSUInteger'/>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='parseJSONData:'>
+<arg type='@' index='0' name='jsonData' declared_type='NSData*'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='parseJSONData:error:'>
+<arg type='@' index='0' name='jsonData' declared_type='NSData*'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='parseUTF8String:length:'>
+<arg const='true' type='*' index='0' name='string' declared_type='unsigned char*'/>
+<arg type='L' index='1' name='length' declared_type='size_t'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='parseUTF8String:length:error:'>
+<arg const='true' type='*' index='0' name='string' declared_type='unsigned char*'/>
+<arg type='L' index='1' name='length' declared_type='size_t'/>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='NSArray'>
+<method selector='JSONData'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONDataWithOptions:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONDataWithOptions:serializeUnsupportedClassesUsingBlock:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@?' function_pointer='true' index='1' name='block' declared_type='id (^)(id)'>
+<arg type='@' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</arg>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONDataWithOptions:serializeUnsupportedClassesUsingDelegate:selector:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@' index='1' name='delegate' declared_type='id'/>
+<arg type=':' index='2' name='selector' declared_type='SEL'/>
+<arg type='^@' index='3' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONString'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='JSONStringWithOptions:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='JSONStringWithOptions:serializeUnsupportedClassesUsingBlock:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@?' function_pointer='true' index='1' name='block' declared_type='id (^)(id)'>
+<arg type='@' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</arg>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='JSONStringWithOptions:serializeUnsupportedClassesUsingDelegate:selector:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@' index='1' name='delegate' declared_type='id'/>
+<arg type=':' index='2' name='selector' declared_type='SEL'/>
+<arg type='^@' index='3' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='NSData'>
+<method selector='mutableObjectFromJSONData'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectFromJSONDataWithParseOptions:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectFromJSONDataWithParseOptions:error:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectFromJSONData'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectFromJSONDataWithParseOptions:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectFromJSONDataWithParseOptions:error:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='NSDictionary'>
+<method selector='JSONData'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONDataWithOptions:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONDataWithOptions:serializeUnsupportedClassesUsingBlock:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@?' function_pointer='true' index='1' name='block' declared_type='id (^)(id)'>
+<arg type='@' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</arg>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONDataWithOptions:serializeUnsupportedClassesUsingDelegate:selector:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@' index='1' name='delegate' declared_type='id'/>
+<arg type=':' index='2' name='selector' declared_type='SEL'/>
+<arg type='^@' index='3' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONString'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='JSONStringWithOptions:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='JSONStringWithOptions:serializeUnsupportedClassesUsingBlock:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@?' function_pointer='true' index='1' name='block' declared_type='id (^)(id)'>
+<arg type='@' declared_type='id'/>
+<retval type='@' declared_type='id'/>
+</arg>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='JSONStringWithOptions:serializeUnsupportedClassesUsingDelegate:selector:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='@' index='1' name='delegate' declared_type='id'/>
+<arg type=':' index='2' name='selector' declared_type='SEL'/>
+<arg type='^@' index='3' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='NSString'>
+<method selector='JSONData'>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONDataWithOptions:includeQuotes:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='B' index='1' name='includeQuotes' declared_type='BOOL'/>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSData*'/>
+</method>
+<method selector='JSONString'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='JSONStringWithOptions:includeQuotes:error:'>
+<arg type='I' index='0' name='serializeOptions' declared_type='JKSerializeOptionFlags'/>
+<arg type='B' index='1' name='includeQuotes' declared_type='BOOL'/>
+<arg type='^@' index='2' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='mutableObjectFromJSONString'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectFromJSONStringWithParseOptions:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='mutableObjectFromJSONStringWithParseOptions:error:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectFromJSONString'>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectFromJSONStringWithParseOptions:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='objectFromJSONStringWithParseOptions:error:'>
+<arg type='I' index='0' name='parseOptionFlags' declared_type='JKParseOptionFlags'/>
+<arg type='^@' index='1' name='error' declared_type='NSError**'/>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+</signatures>
